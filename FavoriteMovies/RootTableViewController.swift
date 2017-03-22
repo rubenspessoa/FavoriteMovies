@@ -10,30 +10,16 @@ import UIKit
 
 class RootTableViewController: UITableViewController {
 
+    let movieDAO: MovieDAO = MovieDAO()
+    var movies: [Movie] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let movieDAO: MovieDAO = MovieDAO()
-        //var movie: Movie? = nil
-        //var sMovies: [Movie]? = nil
-        
-        /*
-        movieDAO.getMovie(byImdbID: "tt0076759", completionHandler: {
-            mv in movie = mv
-            print((movie?.Title)!)
-        })*/
         
         movieDAO.getMovies(byName: "Star", completionHandler: {
-            movies in
-            //print(movies)
+            moviesList in self.movies = moviesList
         })
         
-        /*
-        movieDAO.getMovies(byName: "Star", completionHandler: {
-            movies in
-            sMovies = movies
-        })
-        */
-        // getMovies(byName: "Star")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -50,12 +36,14 @@ class RootTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        
+        // TODO: separar por gênero
         return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return movies.count
     }
 
     /*

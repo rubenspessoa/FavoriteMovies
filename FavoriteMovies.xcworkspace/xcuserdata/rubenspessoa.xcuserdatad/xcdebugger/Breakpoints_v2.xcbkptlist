@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FavoriteMovies/Movie.swift"
-            timestampString = "511831937.400249"
+            timestampString = "511884709.684521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "getMovie(byImdbID:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FavoriteMovies/Movie.swift"
-            timestampString = "511837918.512604"
+            timestampString = "511884709.684521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "MovieDAO"
             landmarkType = "3">
          </BreakpointContent>

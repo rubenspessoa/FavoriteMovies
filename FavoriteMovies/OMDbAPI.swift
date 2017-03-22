@@ -24,7 +24,7 @@ func getMovieJSON(byImdbID: String, completionHandler: @escaping (Dictionary<Str
     }
 }
 
-func getMoviesJSON(byName: String, completionHandler: @escaping (Dictionary<String, String>) -> ()) {
+func getMoviesJSON(byName: String, completionHandler: @escaping (Dictionary<String, Any>) -> ()) {
     Alamofire.request("https://www.omdbapi.com/?s=\(byName)").responseJSON { response in
         /*
         print("Request: \(response.request)")
@@ -33,7 +33,7 @@ func getMoviesJSON(byName: String, completionHandler: @escaping (Dictionary<Stri
         */
         
         if let json = response.result.value {
-            completionHandler(json as! Dictionary<String, String>)
+            completionHandler(json as! Dictionary<String, Any>)
         }
     }
 }

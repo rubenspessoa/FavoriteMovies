@@ -5,9 +5,6 @@
       location = "group:FavoriteMovies/RootTableViewController.swift">
    </FileRef>
    <FileRef
-      location = "group:FavoriteMovies/InitialNavigationController.swift">
-   </FileRef>
-   <FileRef
       location = "group:FavoriteMovies.xcodeproj">
    </FileRef>
    <FileRef

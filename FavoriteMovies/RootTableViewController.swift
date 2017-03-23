@@ -8,41 +8,55 @@
 
 import UIKit
 
-class RootTableViewController: UITableViewController {
+class RootTableViewController: UITableViewController, UISearchResultsUpdating {
 
     let movieDAO: MovieDAO = MovieDAO()
     var movies: [Movie] = []
     
     @IBOutlet weak var rootTableView: UITableView!
     
+    var searchController: UISearchController!
+    //var resultsController = UITableViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         rootTableView.dataSource = self
         rootTableView.delegate = self
+        //self.resultsController.tableView.dataSource = self
+        //self.resultsController.tableView.delegate = self
         
-        movieDAO.getMovies(byName: "Star", completionHandler: {
-            moviesList in
-            self.movies = moviesList
-            self.rootTableView.reloadData()
-        })
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.rootTableView.tableHeaderView = self.searchController.searchBar
+        self.searchController.searchResultsUpdater = self
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        if let inputTest = self.searchController.searchBar.text {
+            if inputTest != "" {
+                do {
+                    try movieDAO.getMovies(byName: self.searchController.searchBar.text!.lowercased(), completionHandler: {
+                        moviesList in
+                        self.movies = moviesList
+                        self.rootTableView.reloadData()
+                    })
+                } catch is NSException {
+                    print("Deu ruim negaum")
+                }
+            }
+        } else {
+            // Doesn't have any input
+        }
     }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // TODO: separar por gênero
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return movies.count
     }
 
@@ -56,42 +70,6 @@ class RootTableViewController: UITableViewController {
         
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation

@@ -13,7 +13,6 @@
 		EA669E3C1E809D3100209063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA669E3B1E809D3100209063 /* Assets.xcassets */; };
 		EA669E3F1E809D3100209063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA669E3D1E809D3100209063 /* LaunchScreen.storyboard */; };
 		EA669E481E80ABBF00209063 /* OMDbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA669E471E80ABBF00209063 /* OMDbAPI.swift */; };
-		EAF644CB1E816DC900C52CCA /* InitialNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF644CA1E816DC900C52CCA /* InitialNavigationController.swift */; };
 		EAF644CF1E816F0500C52CCA /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */; };
 		EAF644D41E81BF5D00C52CCA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF644D31E81BF5D00C52CCA /* Movie.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		EA669E3E1E809D3100209063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA669E401E809D3100209063 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA669E471E80ABBF00209063 /* OMDbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDbAPI.swift; sourceTree = "<group>"; };
-		EAF644CA1E816DC900C52CCA /* InitialNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialNavigationController.swift; sourceTree = "<group>"; };
 		EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		EAF644D31E81BF5D00C52CCA /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,7 +95,6 @@
 		EAF644D01E816F0C00C52CCA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EAF644CA1E816DC900C52CCA /* InitialNavigationController.swift */,
 				EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */,
 			);
 			name = Controllers;
@@ -247,7 +244,6 @@
 			files = (
 				EA669E481E80ABBF00209063 /* OMDbAPI.swift in Sources */,
 				EA669E351E809D3000209063 /* AppDelegate.swift in Sources */,
-				EAF644CB1E816DC900C52CCA /* InitialNavigationController.swift in Sources */,
 				EAF644CF1E816F0500C52CCA /* RootTableViewController.swift in Sources */,
 				EAF644D41E81BF5D00C52CCA /* Movie.swift in Sources */,
 			);

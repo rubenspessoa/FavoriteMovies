@@ -13,18 +13,20 @@ class RootTableViewController: UITableViewController {
     let movieDAO: MovieDAO = MovieDAO()
     var movies: [Movie] = []
     
+    @IBOutlet weak var rootTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        rootTableView.dataSource = self
+        rootTableView.delegate = self
+        
         movieDAO.getMovies(byName: "Star", completionHandler: {
-            moviesList in self.movies = moviesList
+            moviesList in
+            self.movies = moviesList
+            self.rootTableView.reloadData()
         })
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,10 +37,8 @@ class RootTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        
         // TODO: separar por gênero
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,15 +46,17 @@ class RootTableViewController: UITableViewController {
         return movies.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
 
-        // Configure the cell...
-
+        cell.textLabel?.text = movies[indexPath.row].Title
+        cell.detailTextLabel?.text = movies[indexPath.row].Year
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

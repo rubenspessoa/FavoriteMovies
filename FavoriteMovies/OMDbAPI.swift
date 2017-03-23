@@ -12,7 +12,8 @@ import Alamofire
 // TODO: Handle errors
 
 func getMovieJSON(byImdbID: String, completionHandler: @escaping (Dictionary<String, String>) -> ()) {
-    Alamofire.request("https://www.omdbapi.com/?i=\(byImdbID)").responseJSON { response in
+    Alamofire.request("https://www.omdbapi.com/?i=\(byImdbID)").responseJSON {
+        response in
         /*
         print("Request: \(response.request)")
         print("Response: \(response.response)")
@@ -25,7 +26,8 @@ func getMovieJSON(byImdbID: String, completionHandler: @escaping (Dictionary<Str
 }
 
 func getMoviesJSON(byName: String, completionHandler: @escaping (Dictionary<String, Any>) -> ()) {
-    Alamofire.request("https://www.omdbapi.com/?s=\(byName)").responseJSON { response in
+    Alamofire.request("https://www.omdbapi.com/?s=\(byName)").responseJSON {
+        response in
         /*
         print("Request: \(response.request)")
         print("Response: \(response.response)")

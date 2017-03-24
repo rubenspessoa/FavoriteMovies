@@ -34,7 +34,8 @@ class RootTableViewController: UITableViewController, UISearchResultsUpdating {
         
         if let inputTest = self.searchController.searchBar.text {
             if inputTest != "" {
-                movieDAO.getMovies(byName: self.searchController.searchBar.text!.lowercased(), completionHandler: {
+                let inputFixed: String = inputTest.replacingOccurrences(of: " ", with: "_")
+                movieDAO.getMovies(byName: inputFixed.lowercased(), completionHandler: {
                     moviesList in
                     
                     self.movies = moviesList
@@ -56,10 +57,24 @@ class RootTableViewController: UITableViewController, UISearchResultsUpdating {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! MovieSearchTableViewCell
         
-        cell.textLabel?.text = movies[indexPath.row].Title
-        cell.detailTextLabel?.text = movies[indexPath.row].Year
+        
+        cell.titleLabel.text = movies[indexPath.row].Title
+        cell.yearLabel.text = movies[indexPath.row].Year
+        let imageString: String = self.movies[indexPath.row].Poster!
+        let imageUrl: URL? = URL(string: imageString)
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let data = NSData(contentsOf: imageUrl!) {
+                let img = UIImage(data: data as Data)
+                DispatchQueue.main.async {
+                    cell.posterImage.image = img
+                }
+                
+            }
+        }
+        
         
         return cell
     }

@@ -16,6 +16,7 @@
 		EAA02FC61E84574D001E2719 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA02FC51E84574D001E2719 /* MovieViewController.swift */; };
 		EAF644CF1E816F0500C52CCA /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */; };
 		EAF644D41E81BF5D00C52CCA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF644D31E81BF5D00C52CCA /* Movie.swift */; };
+		EAFF84401E8566ED007B35DA /* MovieSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFF843F1E8566ED007B35DA /* MovieSearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EAA02FC51E84574D001E2719 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		EAF644D31E81BF5D00C52CCA /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		EAFF843F1E8566ED007B35DA /* MovieSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		EAF644D01E816F0C00C52CCA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EAFF843F1E8566ED007B35DA /* MovieSearchTableViewCell.swift */,
 				EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */,
 				EAA02FC51E84574D001E2719 /* MovieViewController.swift */,
 			);
@@ -247,6 +250,7 @@
 			files = (
 				EA669E481E80ABBF00209063 /* OMDbAPI.swift in Sources */,
 				EAA02FC61E84574D001E2719 /* MovieViewController.swift in Sources */,
+				EAFF84401E8566ED007B35DA /* MovieSearchTableViewCell.swift in Sources */,
 				EA669E351E809D3000209063 /* AppDelegate.swift in Sources */,
 				EAF644CF1E816F0500C52CCA /* RootTableViewController.swift in Sources */,
 				EAF644D41E81BF5D00C52CCA /* Movie.swift in Sources */,

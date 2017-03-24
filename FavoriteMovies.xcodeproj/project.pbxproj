@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		8BE258B6615FF984B89A9DB0 /* Pods_FavoriteMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03772FF168B477C1624FD9A2 /* Pods_FavoriteMovies.framework */; };
 		EA669E351E809D3000209063 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA669E341E809D3000209063 /* AppDelegate.swift */; };
-		EA669E3A1E809D3100209063 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA669E381E809D3100209063 /* Main.storyboard */; };
 		EA669E3C1E809D3100209063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA669E3B1E809D3100209063 /* Assets.xcassets */; };
 		EA669E3F1E809D3100209063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA669E3D1E809D3100209063 /* LaunchScreen.storyboard */; };
 		EA669E481E80ABBF00209063 /* OMDbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA669E471E80ABBF00209063 /* OMDbAPI.swift */; };
+		EA79F86F1E846DCB002527BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA79F86E1E846DCB002527BD /* Main.storyboard */; };
+		EAA02FC61E84574D001E2719 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA02FC51E84574D001E2719 /* MovieViewController.swift */; };
 		EAF644CF1E816F0500C52CCA /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */; };
 		EAF644D41E81BF5D00C52CCA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF644D31E81BF5D00C52CCA /* Movie.swift */; };
 /* End PBXBuildFile section */
@@ -23,11 +24,12 @@
 		D7DDF533677455AC931C9FB5 /* Pods-FavoriteMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoriteMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FavoriteMovies/Pods-FavoriteMovies.debug.xcconfig"; sourceTree = "<group>"; };
 		EA669E311E809D3000209063 /* FavoriteMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoriteMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA669E341E809D3000209063 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA669E391E809D3100209063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA669E3B1E809D3100209063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA669E3E1E809D3100209063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA669E401E809D3100209063 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA669E471E80ABBF00209063 /* OMDbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDbAPI.swift; sourceTree = "<group>"; };
+		EA79F86E1E846DCB002527BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EAA02FC51E84574D001E2719 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		EAF644D31E81BF5D00C52CCA /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,10 +75,10 @@
 		EA669E331E809D3000209063 /* FavoriteMovies */ = {
 			isa = PBXGroup;
 			children = (
+				EA79F86E1E846DCB002527BD /* Main.storyboard */,
 				EAF644D01E816F0C00C52CCA /* Controllers */,
 				EAF644D21E81BF2900C52CCA /* Models */,
 				EA669E461E809D3C00209063 /* Supporting Files */,
-				EA669E381E809D3100209063 /* Main.storyboard */,
 				EA669E3B1E809D3100209063 /* Assets.xcassets */,
 			);
 			path = FavoriteMovies;
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */,
+				EAA02FC51E84574D001E2719 /* MovieViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -103,8 +106,8 @@
 		EAF644D21E81BF2900C52CCA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EA669E471E80ABBF00209063 /* OMDbAPI.swift */,
 				EAF644D31E81BF5D00C52CCA /* Movie.swift */,
+				EA669E471E80ABBF00209063 /* OMDbAPI.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -181,9 +184,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA79F86F1E846DCB002527BD /* Main.storyboard in Resources */,
 				EA669E3F1E809D3100209063 /* LaunchScreen.storyboard in Resources */,
 				EA669E3C1E809D3100209063 /* Assets.xcassets in Resources */,
-				EA669E3A1E809D3100209063 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA669E481E80ABBF00209063 /* OMDbAPI.swift in Sources */,
+				EAA02FC61E84574D001E2719 /* MovieViewController.swift in Sources */,
 				EA669E351E809D3000209063 /* AppDelegate.swift in Sources */,
 				EAF644CF1E816F0500C52CCA /* RootTableViewController.swift in Sources */,
 				EAF644D41E81BF5D00C52CCA /* Movie.swift in Sources */,
@@ -252,14 +256,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EA669E381E809D3100209063 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA669E391E809D3100209063 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EA669E3D1E809D3100209063 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

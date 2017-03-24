@@ -14,28 +14,23 @@ import Alamofire
 func getMovieJSON(byImdbID: String, completionHandler: @escaping (Dictionary<String, String>) -> ()) {
     Alamofire.request("https://www.omdbapi.com/?i=\(byImdbID)").responseJSON {
         response in
-        /*
-        print("Request: \(response.request)")
-        print("Response: \(response.response)")
-        print("Error: \(response.error)")
-        */
         if let json = response.result.value {
             completionHandler(json as! Dictionary<String, String>)
         }
     }
 }
 
-func getMoviesJSON(byName: String, completionHandler: @escaping (Dictionary<String, Any>) -> ()) {
-    Alamofire.request("https://www.omdbapi.com/?s=\(byName)").responseJSON {
+func getMoviesJSON(byName: String, completionHandler: @escaping (Dictionary<String, Any>?) -> ()) {
+    Alamofire.request("https://www.omdbapi.com/?s=\(byName)&type=movie").responseJSON {
         response in
-        /*
-        print("Request: \(response.request)")
-        print("Response: \(response.response)")
-        print("Error: \(response.error)")
-        */
         
-        if let json = response.result.value {
-            completionHandler(json as! Dictionary<String, Any>)
+        switch response.result {
+            
+        case .success(let value):
+                let json = value
+                completionHandler(json as? Dictionary<String, Any>)
+        case .failure(let error):
+                completionHandler(nil)
         }
     }
 }

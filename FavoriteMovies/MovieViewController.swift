@@ -48,7 +48,6 @@ class MovieViewController: UIViewController {
             self.yearLabel.text = self.movie!.Year
             self.genreLabel.text = self.movie!.Genre
             self.plotText.text = self.movie!.Plot
-            print(self.plotText.text)
             self.imageUrlString = self.movie!.Poster
             self.imageUrl = URL(string: self.imageUrlString!)
             self.directorLabel.text = self.movie!.Director
@@ -65,19 +64,29 @@ class MovieViewController: UIViewController {
                 self.posterImage.image = img
             }
         })
+    }
     
-
-        // Do any additional setup after loading the view.
+    
+    @IBAction func saveToFavorites() {    
+        saveToDatabase(imdbID: self.movieImdbID!, onCompletion: {
+                (isTaken) in
+            
+                if isTaken {
+                    let alert = UIAlertController(title: "Error",
+                                                message: "You have already added this movie to your favorites.",
+                                                preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "Saved to Favorites",
+                                                  message: "Go on and search for another awesome movies!",
+                                                  preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            })
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

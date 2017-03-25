@@ -29,7 +29,7 @@ func getMoviesJSON(byName: String, completionHandler: @escaping (Dictionary<Stri
         case .success(let value):
                 let json = value
                 completionHandler(json as? Dictionary<String, Any>)
-        case .failure(let error):
+        case .failure(_):
                 completionHandler(nil)
         }
     }

@@ -13,6 +13,19 @@
 		EA669E3F1E809D3100209063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA669E3D1E809D3100209063 /* LaunchScreen.storyboard */; };
 		EA669E481E80ABBF00209063 /* OMDbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA669E471E80ABBF00209063 /* OMDbAPI.swift */; };
 		EA79F86F1E846DCB002527BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA79F86E1E846DCB002527BD /* Main.storyboard */; };
+		EA82E01A1E86BA0A00C8AD6F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E0191E86BA0A00C8AD6F /* libsqlite3.tbd */; };
+		EA82E01C1E86BA1A00C8AD6F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E01B1E86BA1A00C8AD6F /* libz.tbd */; };
+		EA82E01E1E86BA3300C8AD6F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E01D1E86BA3300C8AD6F /* AudioToolbox.framework */; };
+		EA82E0201E86BA4000C8AD6F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E01F1E86BA4000C8AD6F /* CFNetwork.framework */; };
+		EA82E0221E86BA4F00C8AD6F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E0211E86BA4F00C8AD6F /* CoreGraphics.framework */; };
+		EA82E0241E86BA5F00C8AD6F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E0231E86BA5F00C8AD6F /* CoreLocation.framework */; };
+		EA82E0261E86BA7000C8AD6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E0251E86BA7000C8AD6F /* QuartzCore.framework */; };
+		EA82E0281E86BA7B00C8AD6F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E0271E86BA7B00C8AD6F /* Security.framework */; };
+		EA82E02A1E86BA9600C8AD6F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E0291E86BA9600C8AD6F /* StoreKit.framework */; };
+		EA82E02C1E86BAA200C8AD6F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E02B1E86BAA200C8AD6F /* SystemConfiguration.framework */; };
+		EA82E02F1E86BDED00C8AD6F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E02D1E86BDED00C8AD6F /* Bolts.framework */; };
+		EA82E0301E86BDED00C8AD6F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA82E02E1E86BDED00C8AD6F /* Parse.framework */; };
+		EA82E0321E86E6F700C8AD6F /* ParseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA82E0311E86E6F700C8AD6F /* ParseAPI.swift */; };
 		EAA02FC61E84574D001E2719 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA02FC51E84574D001E2719 /* MovieViewController.swift */; };
 		EAF644CF1E816F0500C52CCA /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */; };
 		EAF644D41E81BF5D00C52CCA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF644D31E81BF5D00C52CCA /* Movie.swift */; };
@@ -30,6 +43,19 @@
 		EA669E401E809D3100209063 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA669E471E80ABBF00209063 /* OMDbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDbAPI.swift; sourceTree = "<group>"; };
 		EA79F86E1E846DCB002527BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EA82E0191E86BA0A00C8AD6F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		EA82E01B1E86BA1A00C8AD6F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		EA82E01D1E86BA3300C8AD6F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EA82E01F1E86BA4000C8AD6F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EA82E0211E86BA4F00C8AD6F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA82E0231E86BA5F00C8AD6F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EA82E0251E86BA7000C8AD6F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EA82E0271E86BA7B00C8AD6F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EA82E0291E86BA9600C8AD6F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EA82E02B1E86BAA200C8AD6F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EA82E02D1E86BDED00C8AD6F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		EA82E02E1E86BDED00C8AD6F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		EA82E0311E86E6F700C8AD6F /* ParseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPI.swift; sourceTree = "<group>"; };
 		EAA02FC51E84574D001E2719 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		EAF644CE1E816F0500C52CCA /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		EAF644D31E81BF5D00C52CCA /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -41,6 +67,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA82E02C1E86BAA200C8AD6F /* SystemConfiguration.framework in Frameworks */,
+				EA82E02A1E86BA9600C8AD6F /* StoreKit.framework in Frameworks */,
+				EA82E0281E86BA7B00C8AD6F /* Security.framework in Frameworks */,
+				EA82E02F1E86BDED00C8AD6F /* Bolts.framework in Frameworks */,
+				EA82E0261E86BA7000C8AD6F /* QuartzCore.framework in Frameworks */,
+				EA82E0241E86BA5F00C8AD6F /* CoreLocation.framework in Frameworks */,
+				EA82E0301E86BDED00C8AD6F /* Parse.framework in Frameworks */,
+				EA82E0221E86BA4F00C8AD6F /* CoreGraphics.framework in Frameworks */,
+				EA82E0201E86BA4000C8AD6F /* CFNetwork.framework in Frameworks */,
+				EA82E01E1E86BA3300C8AD6F /* AudioToolbox.framework in Frameworks */,
+				EA82E01C1E86BA1A00C8AD6F /* libz.tbd in Frameworks */,
+				EA82E01A1E86BA0A00C8AD6F /* libsqlite3.tbd in Frameworks */,
 				8BE258B6615FF984B89A9DB0 /* Pods_FavoriteMovies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +89,18 @@
 		21D7D0F47970967B732D6EDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA82E02D1E86BDED00C8AD6F /* Bolts.framework */,
+				EA82E02E1E86BDED00C8AD6F /* Parse.framework */,
+				EA82E02B1E86BAA200C8AD6F /* SystemConfiguration.framework */,
+				EA82E0291E86BA9600C8AD6F /* StoreKit.framework */,
+				EA82E0271E86BA7B00C8AD6F /* Security.framework */,
+				EA82E0251E86BA7000C8AD6F /* QuartzCore.framework */,
+				EA82E0231E86BA5F00C8AD6F /* CoreLocation.framework */,
+				EA82E0211E86BA4F00C8AD6F /* CoreGraphics.framework */,
+				EA82E01F1E86BA4000C8AD6F /* CFNetwork.framework */,
+				EA82E01D1E86BA3300C8AD6F /* AudioToolbox.framework */,
+				EA82E01B1E86BA1A00C8AD6F /* libz.tbd */,
+				EA82E0191E86BA0A00C8AD6F /* libsqlite3.tbd */,
 				03772FF168B477C1624FD9A2 /* Pods_FavoriteMovies.framework */,
 			);
 			name = Frameworks;
@@ -111,6 +161,7 @@
 			children = (
 				EAF644D31E81BF5D00C52CCA /* Movie.swift */,
 				EA669E471E80ABBF00209063 /* OMDbAPI.swift */,
+				EA82E0311E86E6F700C8AD6F /* ParseAPI.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -250,6 +301,7 @@
 			files = (
 				EA669E481E80ABBF00209063 /* OMDbAPI.swift in Sources */,
 				EAA02FC61E84574D001E2719 /* MovieViewController.swift in Sources */,
+				EA82E0321E86E6F700C8AD6F /* ParseAPI.swift in Sources */,
 				EAFF84401E8566ED007B35DA /* MovieSearchTableViewCell.swift in Sources */,
 				EA669E351E809D3000209063 /* AppDelegate.swift in Sources */,
 				EAF644CF1E816F0500C52CCA /* RootTableViewController.swift in Sources */,
@@ -370,6 +422,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3FCFAP98B3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FavoriteMovies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.pessoa.rubens.FavoriteMovies;
@@ -384,6 +440,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3FCFAP98B3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FavoriteMovies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.pessoa.rubens.FavoriteMovies;

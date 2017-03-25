@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class RootTableViewController: UITableViewController, UISearchResultsUpdating {
     
@@ -27,7 +28,6 @@ class RootTableViewController: UITableViewController, UISearchResultsUpdating {
         self.rootTableView.tableHeaderView = self.searchController.searchBar
         self.searchController.searchResultsUpdater = self
         self.searchController.searchBar.barTintColor = self.rootTableView.backgroundColor!
-        
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -43,11 +43,6 @@ class RootTableViewController: UITableViewController, UISearchResultsUpdating {
                 })
             }
         }
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // TODO: separar por gênero
-        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

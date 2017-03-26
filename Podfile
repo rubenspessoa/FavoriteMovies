@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'FavoriteMovies' do
     pod 'Alamofire', '~> 4.4'
+    pod 'Kingfisher', '~> 3.0'
 end

@@ -12,6 +12,7 @@ import Parse
 func saveToDatabase(imdbID: String, onCompletion: @escaping (Bool) -> ()) {
     let query: PFQuery = PFQuery(className: "favorite_movies")
     query.whereKey("imdbID", equalTo: imdbID)
+    query.cachePolicy = .cacheThenNetwork
     
     var isTaken: Bool = false
     
@@ -40,7 +41,34 @@ func saveToDatabase(imdbID: String, onCompletion: @escaping (Bool) -> ()) {
         
         onCompletion(isTaken)
     }
-    
-    
-    
+}
+
+func getAllMovies(onCompletion: @escaping ([PFObject]?) -> ()) {
+    let query: PFQuery = PFQuery(className: "favorite_movies")
+    query.whereKeyExists("imdbID")
+    query.cachePolicy = .cacheThenNetwork
+    query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+        if (error == nil && objects!.count > 0) {
+            onCompletion(objects!)
+        } else if (error != nil){
+            print(error!)
+        }
+    }
+}
+
+func deleteMovie(imdbId: String, onCompletion: @escaping () -> ()) {
+    let query: PFQuery = PFQuery(className: "favorite_movies")
+    query.whereKey("imdbID", equalTo: imdbId)
+    query.cachePolicy = .cacheThenNetwork
+    query.findObjectsInBackground() {
+        (objects: [PFObject]?, error: Error?) in
+        if (error == nil && objects!.count > 0) {
+            for object: PFObject in objects! {
+                object.deleteEventually()
+                onCompletion()
+            }
+        } else if (error != nil){
+            print(error!)
+        }
+    }
 }

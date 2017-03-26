@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieViewController: UIViewController {
 
@@ -28,8 +29,12 @@ class MovieViewController: UIViewController {
     
     @IBOutlet weak var durationLabel: UILabel!
     
+    @IBOutlet weak var button: UIButton!
+    
     var imageUrlString: String?
     var imageUrl: URL?
+    
+    var cameFromFavorites: Bool = false
     
     let movieDAO: MovieDAO = MovieDAO()
     var movie: Movie? = nil
@@ -40,6 +45,12 @@ class MovieViewController: UIViewController {
         
         movieDAO.getMovie(byImdbID: self.movieImdbID!, completionHandler: {
             movieResult in
+            
+            DispatchQueue.main.async {
+                let spinnerActivity = MBProgressHUD.showAdded(to: self.view, animated: true)
+                spinnerActivity.label.text = "Loading";
+                spinnerActivity.isUserInteractionEnabled = false;
+            }
             
             self.movie = movieResult
             
@@ -59,22 +70,30 @@ class MovieViewController: UIViewController {
             self.directorLabel.adjustsFontSizeToFitWidth = true
             self.durationLabel.text = self.movie!.Runtime
             
-            if let data = NSData(contentsOf: self.imageUrl!) {
-                let img = UIImage(data: data as Data)
-                self.posterImage.image = img
+            let resource = ImageResource(downloadURL: self.imageUrl!, cacheKey: self.imageUrlString)
+            self.posterImage.kf.setImage(with: resource)
+            
+            if self.cameFromFavorites {
+                self.button.setTitle("Delete Favorite", for: .normal)
+                self.button.backgroundColor = UIColor.red
+            }
+            
+            DispatchQueue.main.async {
+                MBProgressHUD.hideAllHUDs(for: self.view, animated: true);
             }
         })
     }
     
     
-    @IBAction func saveToFavorites() {    
-        saveToDatabase(imdbID: self.movieImdbID!, onCompletion: {
+    @IBAction func buttonPressed() {
+        if (!self.cameFromFavorites) {
+            saveToDatabase(imdbID: self.movieImdbID!, onCompletion: {
                 (isTaken) in
-            
+                
                 if isTaken {
                     let alert = UIAlertController(title: "Error",
-                                                message: "You have already added this movie to your favorites.",
-                                                preferredStyle: .alert)
+                                                  message: "You have already added this movie to your favorites.",
+                                                  preferredStyle: .alert)
                     let ok = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
                     alert.addAction(ok)
                     self.present(alert, animated: true, completion: nil)
@@ -87,6 +106,17 @@ class MovieViewController: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 }
             })
+        } else {
+            deleteMovie(imdbId: self.movieImdbID!, onCompletion: {
+                let alert = UIAlertController(title: "Deleted from Favorites",
+                                              message: "Keep on searching for another awesome movies!",
+                                              preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in })
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+                }
+            )
+        }
     }
 
 }

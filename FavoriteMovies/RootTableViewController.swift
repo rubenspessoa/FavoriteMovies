@@ -8,11 +8,13 @@
 
 import UIKit
 import Parse
+import Kingfisher
 
 class RootTableViewController: UITableViewController, UISearchResultsUpdating {
     
     let movieDAO: MovieDAO = MovieDAO()
     var movies: [Movie] = []
+    var moviesImdbIds: [String] = []
     
     @IBOutlet weak var rootTableView: UITableView!
     
@@ -32,15 +34,31 @@ class RootTableViewController: UITableViewController, UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         
+        
         if let inputTest = self.searchController.searchBar.text {
+            
             if inputTest != "" {
+                
+
                 let inputFixed: String = inputTest.replacingOccurrences(of: " ", with: "_")
                 movieDAO.getMovies(byName: inputFixed.lowercased(), completionHandler: {
                     moviesList in
                     
+                    DispatchQueue.main.async {
+                        let spinnerActivity = MBProgressHUD.showAdded(to: self.view, animated: true)
+                        spinnerActivity.label.text = "Loading";
+                        spinnerActivity.isUserInteractionEnabled = false;
+                    }
+                    
                     self.movies = moviesList
                     self.rootTableView.reloadData()
+                    
+                    DispatchQueue.main.async {
+                        MBProgressHUD.hideAllHUDs(for: self.view, animated: true);
+                    }
                 })
+                
+                
             }
         }
     }
@@ -54,11 +72,15 @@ class RootTableViewController: UITableViewController, UISearchResultsUpdating {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! MovieSearchTableViewCell
         
-        
         cell.titleLabel.text = movies[indexPath.row].Title
         cell.yearLabel.text = movies[indexPath.row].Year
         let imageString: String = self.movies[indexPath.row].Poster!
         let imageUrl: URL? = URL(string: imageString)
+        
+        let resource = ImageResource(downloadURL: imageUrl!, cacheKey: imageString)
+        cell.posterImage.kf.setImage(with: resource)
+        
+        /*
         
         DispatchQueue.global(qos: .userInitiated).async {
             if let data = NSData(contentsOf: imageUrl!) {
@@ -66,9 +88,10 @@ class RootTableViewController: UITableViewController, UISearchResultsUpdating {
                 DispatchQueue.main.async {
                     cell.posterImage.image = img
                 }
-                
             }
         }
+ 
+        */
         
         
         return cell
